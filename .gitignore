@@ -1,0 +1,89 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Thumbnails
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.Trashes
+
+# =========================
+# PyCharm / JetBrains IDE
+# =========================
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# PyCharm local history
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env*/
+.venv/
+
+# =========================
+# Python build / packaging
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# =========================
+# Testing / coverage
+# =========================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Secrets / credentials
+# =========================
+.env
+.env.local
+.env.dev
+.env.prod
+.env.production
+
+# =========================
+# Misc
+# =========================
+.cache/
+.mypy_cache/
+.pyre/
+.ruff_cache/

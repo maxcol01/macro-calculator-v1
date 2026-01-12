@@ -1,0 +1,30 @@
+from flask import Flask, render_template, request, redirect, url_for
+
+# ====== APP SET UP ===== #
+app = Flask(__name__, template_folder="../frontend/templates", static_folder="../frontend/static")
+
+
+# ===== SECURITY OF THE SERVER ===== #
+
+# ===== SECURITY OF THE CLIENT (HEADER) ===== #
+
+# ===== ROUTES ===== #
+# Home page
+@app.route("/")
+def index():
+    return redirect(url_for("login"))
+
+
+#login page
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
+@app.route("/check-credentials")
+def check_credentials():
+    pass
+
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5500, host="0.0.0.0")
