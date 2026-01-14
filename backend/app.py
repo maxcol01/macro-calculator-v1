@@ -21,9 +21,11 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/check-credentials")
+@app.route("/check-credentials", methods=["POST"])
 def check_credentials():
-    pass
+    if request.method == "POST":
+        pass
+
 
 
 if __name__ == "__main__":

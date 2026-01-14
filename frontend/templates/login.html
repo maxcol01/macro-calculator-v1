@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block style %}
-<link rel="stylesheet" href="../static/styles/login.css">
+    <link rel="stylesheet" href="../static/styles/login.css">
 {% endblock %}
 {% block title %}
     <title>Login</title>
@@ -9,14 +9,18 @@
 {% block content %}
     <h1> Welcome to the macro calculator</h1>
     <div class="login-main-container">
-         <form action="{{url_for('check_credentials')}}" method="post">
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" id="email"><br>
-        <label for="pwd">Password:</label><br>
-        <input type="password" name="pwd" id="pwd"><br>
-        <button type="submit">Submit</button>
-    </form>
+        <!--classic email/password connection-->
+        <form action="{{url_for('check_credentials')}}" method="post">
+            <div class="form-credential-container">
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email"><br>
+                <label for="pwd">Password:</label><br>
+                <input type="password" name="pwd" id="pwd"><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
 
+        <!-- sso connection possibilities -->
        <div class="sso">
             <button class="sso-btn">
                 <i class="fa-brands fa-google"></i>

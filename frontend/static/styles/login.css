@@ -6,3 +6,15 @@
     align-items: center;
     min-height: 80vh;
 }
+
+form {
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.sso {
+    border: 1px solid blue;
+}
