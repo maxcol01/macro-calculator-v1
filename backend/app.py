@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask_session import Session
 from firebase_admin import  auth
 from dotenv import load_dotenv
 import os
@@ -17,7 +18,7 @@ app = Flask(__name__, template_folder="../frontend/templates", static_folder="..
 
 SECRET_KEY = os.getenv("MY_SERVER_STAMP")
 
-
+Session(app)
 
 # ===== SECURITY OF THE SERVER ===== #
 app.secret_key = SECRET_KEY
@@ -29,7 +30,7 @@ app.config["SESSION_COOKIE_SAMESITE"] = "Lax" # prevent CSRF
 
 
 # ===== SECURITY OF THE CLIENT (HEADER) ===== #
-@app.before_request
+@app.after_request
 def header_security_definition(response):
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; "
@@ -62,8 +63,9 @@ def login():
 def check_credentials():
     if request.method == "POST":
         # if logged in then session["user"] = user_id
-        
-        pass
+        session["user"] = 1
+    return redirect(url_for("index"))
+
 
 @app.route("/logout")
 def logout():
