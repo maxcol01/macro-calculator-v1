@@ -27,6 +27,9 @@ def check_credentials():
     if request.method == "POST":
         pass
 
+@app.route("/logout")
+def logout():
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
