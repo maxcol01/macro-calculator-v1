@@ -18,7 +18,6 @@ app = Flask(__name__, template_folder="../frontend/templates", static_folder="..
 
 SECRET_KEY = os.getenv("MY_SERVER_STAMP")
 
-Session(app)
 
 # ===== SECURITY OF THE SERVER ===== #
 app.secret_key = SECRET_KEY
@@ -28,6 +27,7 @@ app.config["SESSION_PERMANENT"] = False # when browser is closed then the sessio
 app.config["SESSION_COOKIE_HTTPONLY"] = True # prevent XSS
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax" # prevent CSRF
 
+Session(app)
 
 # ===== SECURITY OF THE CLIENT (HEADER) ===== #
 @app.after_request
