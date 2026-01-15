@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from firebase_admin import  auth
 
 # ====== APP SET UP ===== #
@@ -29,6 +29,7 @@ def check_credentials():
 
 @app.route("/logout")
 def logout():
+    session.pop("user", None)
     return redirect(url_for("login"))
 
 
