@@ -26,6 +26,7 @@ def login():
 def check_credentials():
     if request.method == "POST":
         # if logged in then session["user"] = user_id
+        
         pass
 
 @app.route("/logout")
