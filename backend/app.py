@@ -23,7 +23,7 @@ SECRET_KEY = os.getenv("MY_SERVER_STAMP")
 app.secret_key = SECRET_KEY
 app.config["SESSION_USE_SIGNER"] = True # apply the stamp to the session
 app.config["SESSION_TYPE"] = "filesystem" # storage of the session (proto = server)
-app.config["SESSION_PERMANENT"] = False # when browser is closed then the session disapear
+app.config["SESSION_PERMANENT"] = False # when browser is closed then the session disappear
 app.config["SESSION_COOKIE_HTTPONLY"] = True # prevent XSS
 app.config["SESSION_COOKIE_SAMESITE"] = "Lax" # prevent CSRF
 
